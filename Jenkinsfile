@@ -13,7 +13,7 @@ pipeline {
   post {
     success {
       node('master') {
-        echo "We should bump the version here!"
+        echo "The message was changed already!"
         echo "Cleaning the workspace!"
         sh 'ls -la'
       }

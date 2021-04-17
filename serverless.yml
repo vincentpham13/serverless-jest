@@ -1,0 +1,16 @@
+service: serverless-jest
+
+frameworkVersion: ">=1.1.0 <=2.32.1"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+
+functions:
+  localGreeting:
+    handler: handler.localGreeting
+    events:
+      - http:
+          path: ping
+          method: get

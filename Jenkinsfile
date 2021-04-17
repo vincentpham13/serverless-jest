@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Test') {
       agent {
-        label 'test-agent1'
+        label 'test-agent-testt'
       }
       steps {
         sh 'ls -la'

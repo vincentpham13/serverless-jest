@@ -10,4 +10,13 @@ pipeline {
       }
     }
   }
+  post {
+    success {
+      node('master') {
+        echo "We should bump the version here!"
+        echo "Cleaning the workspace!"
+        sh 'ls -la'
+      }
+    }
+  }
 }

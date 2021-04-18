@@ -6,7 +6,7 @@ pipeline {
         label 'master'
       }
       steps {
-        sh 'chmod +x -R ${env.WORKSPACE}'
+        sh "chmod +x -R ${env.WORKSPACE}"
         sh 'ls __ci__'
         sh '__ci__/run-test.sh'
       }

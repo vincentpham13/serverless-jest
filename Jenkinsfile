@@ -1,9 +1,23 @@
 pipeline {
-  agent none
+  agent {
+    docker {
+      image 'node:lts-buster-slim' 
+      args '-p 3000:3000'
+      label 'node-agent'
+    }
+  }
   stages {
+    stage('Build') {
+      agent {
+        label 'node-agent'
+      }
+      steps {
+        sh 'npm install'
+      }
+    }
     stage('Test') {
       agent {
-        label 'master'
+        label 'node-agent'
       }
       steps {
         sh "chmod +x -R ${env.WORKSPACE}"

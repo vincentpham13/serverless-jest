@@ -18,7 +18,8 @@ pipeline {
       }
       post {
         always {
-          echo 'Finish testing'
+          echo 'Display dir and finish testing'
+          sh 'ls -a'
         } 
       }
     }

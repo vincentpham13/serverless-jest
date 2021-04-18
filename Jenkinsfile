@@ -8,17 +8,11 @@ pipeline {
   }
   stages {
     stage('Build') {
-      agent {
-        label 'node-agent'
-      }
       steps {
         sh 'npm install'
       }
     }
     stage('Test') {
-      agent {
-        label 'node-agent'
-      }
       steps {
         sh "chmod +x -R ${env.WORKSPACE}"
         sh 'ls __ci__'

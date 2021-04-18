@@ -6,6 +6,7 @@ pipeline {
         label 'master'
       }
       steps {
+        sh 'ls -a'
         sh '__ci__/run-test.sh'
       }
       post {

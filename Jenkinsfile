@@ -6,9 +6,12 @@ pipeline {
         label 'master'
       }
       steps {
-        sh 'ls -la'
-        sh 'npm install'
-        sh 'npm test'
+        sh '__ci__/run-test.sh'
+      }
+      post {
+        always {
+          echo 'Finish testing'
+        } 
       }
     }
   }

@@ -1,0 +1,15 @@
+{
+  "verbose": true,
+  "reporters": [
+    "default",
+    [
+      "jest-junit",
+      {
+        "suiteNameTemplate": "{filename}",
+        "ancestorSeparator": " › ",
+        "outputDirectory": "output/reports/unit",
+        "outputName": "junit.xml"
+      }
+    ]
+  ]
+}

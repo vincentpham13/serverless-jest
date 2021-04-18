@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh "chmod +x -R ${env.WORKSPACE}"
+        // sh "chmod +x -R ${env.WORKSPACE}"
         sh 'ls __ci__'
         sh 'sh __ci__/run-test.sh'
       }

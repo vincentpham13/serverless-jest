@@ -8,7 +8,7 @@ pipeline {
       steps {
         sh "chmod +x -R ${env.WORKSPACE}"
         sh 'ls __ci__'
-        sh '__ci__/run-test.sh'
+        sh 'sh __ci__/run-test.sh'
       }
       post {
         always {

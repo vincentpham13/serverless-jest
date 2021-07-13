@@ -12,7 +12,7 @@
       // })
       .help() // for --help and -h to work
       .argv;
-    console.log("🚀 ~ file: migration.js ~ line 15 ~ argv", argv)
+    console.log("🚀 ~ file: migration.js ~ line 1522222 ~ argv", argv)
 
     const ENVIRONMENT = argv._[0];
 

@@ -1,15 +1,3 @@
-def getEnvironment() {
-    def branch = env.BRANCH_NAME
-    if(branch == 'master') {
-        return 'dev'
-    } else if (branch == 'stage') {
-        return 'stage'
-    } else {
-        return 'dev'
-    }
-}
-def envString = getEnvironment()
-
 pipeline {
   agent {
     docker {
@@ -37,12 +25,10 @@ pipeline {
     }
     stage('Run migrations') {
       steps {
-        echo "Performing migration ${envString}"
+        echo "Performing migration"
         dir ('scripts') {
           sh 'ls -a'
         }
-        sh "npm run migrate:${envString}"
-        // npm command: 'migrate:dev'
       }
     }
   }
